@@ -1,6 +1,7 @@
 var select1="",select2="";
 var doc1=null,doc2=null;
 var vidas=10;
+var points=0;
 
 function clear()
 {
@@ -30,6 +31,7 @@ function restartGame()
     myimg16.src="img/SignoPreg.svg";
     vidas=10;
     document.getElementById("vidas").innerText="Vidas: "+vidas;
+    points=0;
     clear();
 }
 
@@ -43,9 +45,19 @@ function checkOut()
         document.getElementById("vidas").innerText="Vidas: "+vidas;
         checkLife();
     }
+    else
+    {
+        points++;
+    }
 
-
+    checkVictory();
     clear();
+}
+
+function checkVictory()
+{
+    if(points==8)
+    alert("Felicidades as ganado");
 }
 
 function checkLife()
